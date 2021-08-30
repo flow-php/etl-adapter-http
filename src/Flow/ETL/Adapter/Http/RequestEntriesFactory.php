@@ -27,7 +27,7 @@ final class RequestEntriesFactory
     {
         $requestType = 'html';
 
-        foreach ($request->getHeader('Accept') as $header) {
+        foreach ($request->getHeader('Content-Type') as $header) {
             if (\strpos('application/json', $header) !== false) {
                 $requestType = 'json';
             }
