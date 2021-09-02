@@ -51,7 +51,7 @@ final class RequestEntriesFactoryTest extends TestCase
             $request->withHeader('Accept', 'application/json'),
         ];
 
-        yield 'NullEntry when request body is empty' => [
+        yield 'uses NullEntry for request body when when request body is empty' => [
             NullEntry::class,
             $messageFactory
                 ->createRequest('POST', 'https://flow-php.io/example')
