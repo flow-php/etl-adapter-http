@@ -26,14 +26,14 @@ final class PsrHttpClientStaticExtractor implements Extractor
     /**
      * @psalm-var pure-callable(RequestInterface) : void|null
      *
-     * @var callable(RequestInterface) : void|null
+     * @var callable(RequestInterface) : null|void
      */
     private $preRequest;
 
     /**
      * @psalm-var pure-callable(RequestInterface, ResponseInterface) : void|null
      *
-     * @var callable(RequestInterface, ResponseInterface) : void|null
+     * @var callable(RequestInterface, ResponseInterface) : null|void
      */
     private $postRequest;
 
