@@ -29,13 +29,13 @@ final class RequestEntriesFactory
 
         if ($request->hasHeader('Content-Type')) {
             foreach ($request->getHeader('Content-Type') as $header) {
-                if (str_contains('application/json', $header)) {
+                if (\str_contains('application/json', $header)) {
                     $requestType = 'json';
                 }
             }
         } else {
             foreach ($request->getHeader('Accept') as $header) {
-                if (str_contains('application/json', $header)) {
+                if (\str_contains('application/json', $header)) {
                     $requestType = 'json';
                 }
             }

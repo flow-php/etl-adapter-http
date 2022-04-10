@@ -28,7 +28,7 @@ final class ResponseEntriesFactory
         $responseType = 'html';
 
         foreach ($response->getHeader('Content-Type') as $header) {
-            if (str_contains('application/json', $header)) {
+            if (\str_contains('application/json', $header)) {
                 $responseType = 'json';
             }
         }
