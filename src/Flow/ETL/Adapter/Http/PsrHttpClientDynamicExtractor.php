@@ -17,10 +17,6 @@ use Psr\Http\Message\ResponseInterface;
  */
 final class PsrHttpClientDynamicExtractor implements Extractor
 {
-    private ClientInterface $client;
-
-    private NextRequestFactory $requestFactory;
-
     /**
      * @psalm-var pure-callable(RequestInterface) : void|null
      *
@@ -36,15 +32,11 @@ final class PsrHttpClientDynamicExtractor implements Extractor
     private $postRequest;
 
     /**
-     * @param ClientInterface $client
-     * @param NextRequestFactory $requestFactory
      * @psalm-param pure-callable(RequestInterface) : void|null $preRequest
      * @psalm-param pure-callable(RequestInterface, ResponseInterface) : void|null $postRequest
      */
-    public function __construct(ClientInterface $client, NextRequestFactory $requestFactory, ?callable $preRequest = null, ?callable $postRequest = null)
+    public function __construct(private readonly ClientInterface $client, private readonly NextRequestFactory $requestFactory, ?callable $preRequest = null, ?callable $postRequest = null)
     {
-        $this->client = $client;
-        $this->requestFactory = $requestFactory;
         $this->preRequest = $preRequest;
         $this->postRequest = $postRequest;
     }
