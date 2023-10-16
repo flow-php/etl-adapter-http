@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Flow\ETL\Tests\Integration;
+namespace Flow\ETL\Adapter\HTTP\Tests\Integration;
 
 use Flow\ETL\Adapter\Http\PsrHttpClientStaticExtractor;
 use Flow\ETL\Config;
@@ -21,10 +21,10 @@ PsrHttpClientStaticExtractorTest extends TestCase
         $psr17Factory = new Psr17Factory();
         $psr18Client = new Client($psr17Factory);
         $psr18Client->addResponse(
-            new Response(200, [], \file_get_contents(__DIR__ . '/../json/norberttech.json')),
+            new Response(200, [], \file_get_contents(__DIR__ . '/../Fixtures/norberttech.json')),
         );
         $psr18Client->addResponse(
-            new Response(200, [], \file_get_contents(__DIR__ . '/../json/tomaszhanc.json')),
+            new Response(200, [], \file_get_contents(__DIR__ . '/../Fixtures/tomaszhanc.json')),
         );
 
         $requests = static function () use ($psr17Factory) : \Generator {

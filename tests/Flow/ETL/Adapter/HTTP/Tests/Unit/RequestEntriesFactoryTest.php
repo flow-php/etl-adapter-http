@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Flow\ETL\Tests\Unit;
+namespace Flow\ETL\Adapter\HTTP\Tests\Unit;
 
 use Flow\ETL\Adapter\Http\RequestEntriesFactory;
 use Flow\ETL\Row\Entry\JsonEntry;
