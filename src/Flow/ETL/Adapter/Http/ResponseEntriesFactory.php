@@ -64,7 +64,7 @@ final class ResponseEntriesFactory
 
         return new Row\Entries(
             $responseBodyEntry,
-            new Row\Entry\ArrayEntry('response_headers', $response->getHeaders()),
+            new Row\Entry\JsonEntry('response_headers', $response->getHeaders()),
             new Row\Entry\IntegerEntry('response_status_code', $response->getStatusCode()),
             new Row\Entry\StringEntry('response_protocol_version', $response->getProtocolVersion()),
             new Row\Entry\StringEntry('response_reason_phrase', $response->getReasonPhrase()),

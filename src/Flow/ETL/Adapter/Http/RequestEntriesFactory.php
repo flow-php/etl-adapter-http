@@ -74,7 +74,7 @@ final class RequestEntriesFactory
         return new Row\Entries(
             $requestBodyEntry,
             new Row\Entry\StringEntry('request_uri', (string) $request->getUri()),
-            new Row\Entry\ArrayEntry('request_headers', $request->getHeaders()),
+            new Row\Entry\JsonEntry('request_headers', $request->getHeaders()),
             new Row\Entry\StringEntry('request_protocol_version', $request->getProtocolVersion()),
             new Row\Entry\StringEntry('request_method', $request->getMethod()),
         );
