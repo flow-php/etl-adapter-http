@@ -6,14 +6,13 @@ namespace Flow\ETL\Adapter\HTTP\Tests\Integration;
 
 use Flow\ETL\Adapter\Http\DynamicExtractor\NextRequestFactory;
 use Flow\ETL\Adapter\Http\PsrHttpClientDynamicExtractor;
-use Flow\ETL\{Config, FlowContext};
+use Flow\ETL\{Config, FlowContext, Tests\FlowTestCase};
 use Http\Mock\Client;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\{RequestInterface, ResponseInterface};
 
-final class PsrHttpClientDynamicExtractorTest extends TestCase
+final class PsrHttpClientDynamicExtractorTest extends FlowTestCase
 {
     public function test_http_extractor() : void
     {

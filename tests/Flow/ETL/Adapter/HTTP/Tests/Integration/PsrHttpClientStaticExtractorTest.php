@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace Flow\ETL\Adapter\HTTP\Tests\Integration;
 
 use Flow\ETL\Adapter\Http\PsrHttpClientStaticExtractor;
-use Flow\ETL\{Config, FlowContext, Rows};
+use Flow\ETL\{Config, FlowContext, Rows, Tests\FlowTestCase};
 use Http\Mock\Client;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 
-final class PsrHttpClientStaticExtractorTest extends TestCase
+final class PsrHttpClientStaticExtractorTest extends FlowTestCase
 {
     public function test_http_extractor() : void
     {

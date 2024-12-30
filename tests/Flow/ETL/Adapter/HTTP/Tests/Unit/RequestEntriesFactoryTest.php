@@ -6,12 +6,12 @@ namespace Flow\ETL\Adapter\HTTP\Tests\Unit;
 
 use Flow\ETL\Adapter\Http\RequestEntriesFactory;
 use Flow\ETL\Row\Entry\{JsonEntry, StringEntry};
+use Flow\ETL\Tests\FlowTestCase;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
-final class RequestEntriesFactoryTest extends TestCase
+final class RequestEntriesFactoryTest extends FlowTestCase
 {
     public static function requests() : \Generator
     {
